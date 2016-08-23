@@ -1,0 +1,92 @@
+body {
+	background-image: url("../images/hiphop3.jpg");
+	color: black;
+	font-family: "Times New Roman", Times, serif, sans-serif;
+	height: 100%;
+}
+	
+
+img {
+	background-color: black;
+	opacity: 0.7;
+}
+
+h1 {
+	margin-top: 0px;
+    margin-bottom: 80px;
+    background-color: white;
+    opacity: 0.7;
+    text-align: center;
+    font-size: 60px;
+}
+
+
+.jumbotron {
+	height: 300px;
+	margin-right: 50px; 
+	margin-left: 50px;
+	opacity: 0.9;
+
+}
+
+#hint{
+	text-align: left;
+}
+
+#sidesection {
+
+	height: 190px;
+}
+
+#textguess {
+	padding: 50px;
+	height: 200px;
+	text-align: center;
+
+			
+
+}
+
+#word{
+	padding: 20px;
+	font-size: 30px;
+	text-align: center;
+}
+
+ul {
+	text-align: center;
+}
+
+#endresult {
+	text-align: center;
+	color: red;
+	font-size: 30px;
+
+}
+
+.wlg {
+	background-color: white;
+	opacity: 0.9;
+	margin-bottom: 60px;
+	margin-left: 50px;
+	margin-right: 50px;
+}
+
+#gart{
+	text-align: center;
+}
+
+
+
+footer {
+	background-color: #5bbe63;
+	margin-bottom: 0px;
+	height: 40px;
+	color: white;
+	text-align: center;
+}
+
+
+
+
+
