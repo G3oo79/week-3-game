@@ -22,7 +22,6 @@ var loss = "";
 var lifes = "";
 
 
-
 document.onkeyup = function() {
 	var user = String.fromCharCode(event.keyCode).toLowerCase();
 	console.log(user);
@@ -32,7 +31,7 @@ document.onkeyup = function() {
 function test () {
 	wordInput = userOptions[Math.floor(Math.random() * userOptions.length)];
 	console.log(wordInput);
-	indLetters = wordInput.split("_");
+	indLetters = wordInput.split("");
 	
 	console.log(indLetters);
 
@@ -51,7 +50,8 @@ function setDashes() {
 
 setDashes();
  
-
+var html = "<span id='word'>" + dash + "</span>";
+html = document.querySelector("word");
 
 
 
