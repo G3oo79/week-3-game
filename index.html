@@ -38,20 +38,34 @@
 					  	</div>
 					  	<div id="textguess" class="col-md-9">
 					  		<h3 id="gart">Guess This Artist!!</h3><br>
-					  		<span id="word">_ _ _ _ _ _</span>
+					  		<span id="word"></span>
 					  	</div>
 					</div>
-				  	<p id="endresult">You Win or loose</p>
+				  	<p id="message">chosen letters: </p>
 				</div>
 			</div>
 		</div>
 		<div class="wlg">
 			<div class="row">
-				<div class="col-lg-9">
-					<h3>wins: 0</h3>
-					<h3>Looses: 0</h3>
-					<h3>Guessleft: 9</h3>
-					<h3>wrong: 0</h3>
+				<div class="col-sm-5">
+					<h3>wins: <span id="wincounter">0</span></h3><br>
+					<h3>Loses: <span id="losscounter">0</span></h3><br>
+					<h3>lives: <span id="livescounter">9</span></h3><br>
+				</div>
+				<div class="col-md-4">
+					<div id="picContainer" style="background-image: url('assets/images/HANGMAN3.png'); background-position:center; background-repeat:no-repeat; height: 400px; width: 390px; margin: 0 0 10px 20px;">
+ 
+ <div id="ropeCover" style="position: absolute; background-color: white; top: 57px; left: 124px; width: 10px; height: 50px;"> </div>
+ <div id="neckCover" style="position: absolute; background-color: white; top: 159px; left: 124px; width: 10px; height: 18px;"></div> 
+ <div id="bodyCover" style="position: absolute; background-color: white; top: 174px; left: 122px; width: 10px; height: 52px;"></div> 
+ <div id="rightLegCover" style="position: absolute; background-color: white; top: 218px; left: 76px; width: 50px; height: 61px;"></div>
+ <div id="leftLegCover" style="position: absolute; background-color: white; top: 218px; left: 132px; width: 50px; height: 61px;"></div>
+ <div id="headCover" style="position: absolute; background-color: white; top: 105px; left: 103px; width: 50px; height: 55px;"></div>
+ <div id="leftArmCover" style="position: absolute; background-color: white; top: 172px; left: 132px; width: 50px; height: 41px;"></div>
+ <div id="rightArmCover" style="position: absolute; background-color: white; top: 168px; left: 76px; width: 50px; height: 41px;"></div>
+
+
+</div>
 				</div>
 			</div>
 		</div>
@@ -59,7 +73,6 @@
 	<footer>
 		<p>Copyright Fausto Brito 2016</p>
 	</footer>
-
 
 
 
