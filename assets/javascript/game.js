@@ -33,6 +33,8 @@ var gameswin = "";
 var corransw = "";
 var keysused = [];
 var keyduplicate = "";
+var livescnt = "";
+var button;
 
 
 
@@ -40,6 +42,7 @@ var keyduplicate = "";
 function init()	{
 
 keyduplicate= "no";
+livescnt = 9;
 figureParts[0] = document.getElementById( "headCover" ); 
 figureParts[1] = document.getElementById( "neckCover" );
 figureParts[2] = document.getElementById( "bodyCover" );
@@ -48,6 +51,9 @@ figureParts[4] = document.getElementById( "leftArmCover" );
 figureParts[5] = document.getElementById( "rightLegCover" );
 figureParts[6] = document.getElementById( "leftLegCover" );
 figureParts[7] = document.getElementById( "ropeCover" );
+button= document.getElementById( "button" ); 
+
+button.onclick = resets;
 
 figCnt=0;
 //are the counters to be referense to the html link.
@@ -77,21 +83,18 @@ counter = 0;
 var keyNum = (window.event) ? event.keyCode : e.which;
 //convertts to a string.
 letterInput = String.fromCharCode(keyNum);
-keysused.push(letterInput);
 
-//
+//it checks if the keypress is duplicate
 for (var x = 0; x < keysused.length; x++){
 	if (keysused[x] === letterInput){
-
 	keyduplicate = "yes"; 
      break; }
     else {
 	keyduplicate = "no";}
 
-}//for loop
-
-
-document.getElementById( "message" ).innerHTML += keyduplicate;
+}//end for loop
+//adds new letter to key used array
+keysused.push(letterInput);
 
 if (keyduplicate === "no")
 //compare letter input with every single character
@@ -118,12 +121,16 @@ wordSpan.innerHTML = dashes.join("&nbsp");
 if (winnercnt === corransw) {
 	document.getElementById( "message" ).innerHTML = "You Win";
 	wins.innerHTML = gameswin++;
+	
 }
 } //ends keypressResponse function.
 
 //when choosing a letter display it
 function wrongLetter (){
 	document.getElementById( "message" ).innerHTML += letterInput;
+
+	lives.innerHTML = --livescnt;
+
 	//
 	if (figCnt === 8) {
 	  picend.style.background = "url(assets/images/HANGMAN2c.png)";
@@ -136,12 +143,16 @@ function wrongLetter (){
       //this prints the number on html loses
     
       loss.innerHTML = gamesLoss++;
+    
+}//ends if
 
-                           }//ends if
+/*lives.innerHTML = --livescnt ;*/
 
 
-	//Please work!! hidde divs when error picture!!
-	figureParts[figCnt].style.visibility = "hidden";
+	//if there is no array index left get error!!
+	if (figCnt < 8)
+		//Please work!! hidden divs when error picture!!
+		figureParts[figCnt].style.visibility = "hidden";
 	figCnt++;
 }
 
@@ -164,6 +175,31 @@ for (var i = 0; i < inWord.length; i++) {
 }
 wordSpan.innerHTML = dashes.join("&nbsp");
 console.log(dashes.join(" "));
+
+}//ends set dashes
+
+function resets (){
+
+keyduplicate= "no";
+livescnt = 9;
+
+figCnt= 0;
+
+winnercnt = 0;
+
+picend.style.background = "url(assets/images/HANGMAN3.png)";
+	  picend.style.backgroundPosition = "center";
+	  picend.style.backgroundRepeat = "no-repeat";
+	  picend.style.height = "400px";
+      picend.style.width = "390px";
+      picend.style.margin = "0 0 10px 20px";
+keysused = [];
+for (var i = 0; i < 10; i++)
+	
+  /* figureParts[i].style.visibility = "visible";*/
+
+chooseWord();
+setDashes();
 
 }
 
